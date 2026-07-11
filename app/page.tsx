@@ -1,28 +1,17 @@
 import Container from "@/components/layout/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Button from "@/components/ui/Button";
 import ProjectTag from "@/components/ui/ProjectTag";
+import Hero from "@/components/home/Hero";
 export default function Home() {
   return (
     <Container>
-      <section className="mb-24">
-        <h1 className="text-5xl font-semibold tracking-tight">
-          Alex Jiang
-        </h1>
+      <Container>
+        <Hero />
 
-        <p className="mt-6 max-w-2xl text-xl leading-8 text-muted">
-          Software Engineer building full-stack data products.
-        </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-                <Button href="#projects">
-                    View Projects
-                </Button>
+       
+      </Container>
 
-                <Button href="#">Resume</Button>
-            </div>
-      </section>
-
-      <section className="mb-24">
+      <section id="projects" className="mb-24 scroll-mt-8">
         <SectionHeading>Featured Projects</SectionHeading>
         <div className="mt-6 flex gap-3">
             <ProjectTag>Python</ProjectTag>
