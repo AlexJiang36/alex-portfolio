@@ -1,6 +1,6 @@
 export const profile = {
   name: "Alex Jiang",
-  role: "Computer Science Student · Software Developer",
+  role: "Bachelor of Computer Science / Software Developer",
   headline: "I build full-stack data and prediction tools.",
   summary:
     "I’m a UBC Bachelor of Computer Science student with a background in data science and statistics. My projects focus on backend systems, data pipelines, and decision-support products.",
