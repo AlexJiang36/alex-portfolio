@@ -1,6 +1,6 @@
 import Container from "@/components/layout/Container";
 import PortfolioShell from "@/components/layout/PortfolioShell";
-import FeaturedProject from "@/components/projects/FeaturedProject";
+import ProjectCard from "@/components/projects/ProjectCard";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
@@ -32,14 +32,14 @@ export default function Home() {
         <section>
           <SectionHeading>Featured Projects</SectionHeading>
 
-          <div className="mt-8 space-y-8">
-            {featuredProjects.map((project) => (
-              <FeaturedProject
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {projects.map((project) => (
+                <ProjectCard
                 key={project.slug}
                 project={project}
-              />
+                />
             ))}
-          </div>
+            </div>
         </section>
       </PortfolioShell>
     </Container>

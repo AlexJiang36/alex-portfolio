@@ -5,7 +5,7 @@ export type Project = {
   shortDescription: string;
   technologies: readonly string[];
   highlights: readonly string[];
-  caseStudyPath: string;
+  caseStudyPath?: string;
   image?: {
     src: string;
     alt: string;

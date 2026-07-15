@@ -1,6 +1,6 @@
 import Container from "@/components/layout/Container";
 import PortfolioShell from "@/components/layout/PortfolioShell";
-import FeaturedProject from "@/components/projects/FeaturedProject";
+import ProjectCard from "@/components/projects/ProjectCard";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { projects } from "@/data/projects";
 
@@ -16,14 +16,14 @@ export default function ProjectsPage() {
             projects I have built.
           </p>
 
-          <div className="mt-8 space-y-8">
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
             {projects.map((project) => (
-              <FeaturedProject
+                <ProjectCard
                 key={project.slug}
                 project={project}
-              />
+                />
             ))}
-          </div>
+            </div>
         </section>
       </PortfolioShell>
     </Container>

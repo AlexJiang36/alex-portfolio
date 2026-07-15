@@ -4,7 +4,7 @@ type ContainerProps = {
 
 export default function Container({ children }: ContainerProps) {
   return (
-    <main className="mx-auto max-w-5xl px-6 py-16">
+    <main className="mx-auto max-w-7xl px-6 py-16">
       {children}
     </main>
   );
