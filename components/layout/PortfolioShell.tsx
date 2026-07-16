@@ -10,12 +10,14 @@ export default function PortfolioShell({
   children,
 }: PortfolioShellProps) {
   return (
-    <SplitLayout sidebar={<ProfileSidebar />}>
-      <header className="mb-16 flex justify-end">
+    <div>
+      <header className="mb-6 flex justify-end lg:mb-8">
         <SiteNavigation />
       </header>
 
-      {children}
-    </SplitLayout>
+      <SplitLayout sidebar={<ProfileSidebar />}>
+        {children}
+      </SplitLayout>
+    </div>
   );
 }

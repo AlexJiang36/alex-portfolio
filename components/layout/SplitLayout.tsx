@@ -8,8 +8,8 @@ export default function SplitLayout({
   children,
 }: SplitLayoutProps) {
   return (
-    <div className="grid gap-14 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-16 xl:grid-cols-[280px_minmax(0,1fr)] xl:gap-24">
-      <div className="lg:sticky lg:top-16 lg:self-start">
+    <div className="grid gap-8 lg:grid-cols-[250px_minmax(0,1fr)] lg:gap-10 xl:grid-cols-[270px_minmax(0,1fr)]">
+      <div className="lg:sticky lg:top-8 lg:self-start">
         {sidebar}
       </div>
 
