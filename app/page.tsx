@@ -19,7 +19,7 @@ export default function Home() {
           <ContentCard>
             <SectionHeading>About Me</SectionHeading>
 
-            <div className="mt-6 space-y-4 text-lg leading-8 text-muted">
+            <div className="mt-6 space-y-4 text-[18px] leading-8 text-foreground/90">
               <p className="font-semibold text-foreground">
                 {profile.headline}
               </p>

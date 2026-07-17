@@ -3,104 +3,167 @@ import Link from "next/link";
 
 import Container from "@/components/layout/Container";
 import PortfolioShell from "@/components/layout/PortfolioShell";
+import ContentCard from "@/components/ui/ContentCard";
 import ProjectTag from "@/components/ui/ProjectTag";
-import { worldCupCaseStudy } from "@/data/worldCupCaseStudy";
+import SectionHeading from "@/components/ui/SectionHeading";
 
 export const metadata: Metadata = {
-  title: `${worldCupCaseStudy.title} | Alex Jiang`,
-  description: worldCupCaseStudy.summary,
+  title: "World Cup Fantasy Predictor | Alex Jiang",
+  description:
+    "A full-stack live tournament analytics platform for match forecasts, player projections, fantasy decision support, and leakage-safe evaluation.",
 };
 
-export default function WorldCupFantasyPredictorPage() {
-  const [overviewSection, ...detailSections] =
-    worldCupCaseStudy.sections;
+const technologies = [
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "SQLAlchemy",
+  "Alembic",
+  "pandas",
+  "Next.js",
+  "TypeScript",
+] as const;
 
+const whatIBuilt = [
+  "Match and player prediction pipelines",
+  "Transfer recommendations and model squad planning",
+  "Team of the Round and Golden Boot tracking",
+  "Live refresh validation and operational monitoring",
+] as const;
+
+const challenges = [
+  "Keeping match, player, squad, and transfer outputs synchronized after each live refresh.",
+  "Preventing low-usage or unavailable players from receiving unrealistic projections.",
+  "Evaluating model changes honestly with limited knockout-round samples.",
+] as const;
+
+const engineeringHighlights = [
+  "Saved pre-round projection snapshots so models can be evaluated without post-match data leakage.",
+  "Built repeatable refresh and validation workflows for live tournament updates.",
+  "Added player-usage checks using actual starts, minutes, availability, and realistic scoring expectations.",
+] as const;
+
+const evaluationAndLimitations = [
+  "Evaluation uses archived pre-round predictions and completed actuals rather than regenerated historical outputs.",
+  "Knockout-stage samples are small and noisy, so results are presented as checkpoints rather than proof of reliable model superiority.",
+  "Transfer recommendations are decision support and still require manual review for late lineup and availability news.",
+] as const;
+
+type DetailCardProps = {
+  title: string;
+  items: readonly string[];
+};
+
+function DetailCard({
+  title,
+  items,
+}: DetailCardProps) {
+  return (
+    <ContentCard>
+      <SectionHeading>{title}</SectionHeading>
+
+      <ul className="mt-7 list-disc space-y-3 pl-6 text-[17px] leading-8 text-foreground/90">
+        {items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </ContentCard>
+  );
+}
+
+export default function WorldCupFantasyPredictorPage() {
   return (
     <Container>
       <PortfolioShell>
-        <article>
-          <Link
-            href="/projects"
-            className="text-sm text-muted transition-colors hover:text-foreground"
-          >
-            ← Back to projects
-          </Link>
+        <div className="space-y-8">
+          <ContentCard>
+            <Link
+              href="/projects"
+              className="
+                inline-flex items-center gap-2
+                text-sm font-medium
+                text-foreground/75
+                transition-[color,transform]
+                duration-200
+                hover:-translate-x-0.5
+                hover:text-foreground
+                focus-visible:outline-none
+                focus-visible:ring-2
+                focus-visible:ring-offset-2
+              "
+            >
+              <span aria-hidden="true">←</span>
+              Back to projects
+            </Link>
 
-          <header className="mt-8">
-            <h1 className="text-4xl font-semibold tracking-tight">
-              {worldCupCaseStudy.title}
-            </h1>
+            <div className="mt-8">
+              <p
+                className="
+                  text-xs
+                  font-semibold uppercase
+                  tracking-[0.12em]
+                "
+                style={{ color: "#58738d" }}
+              >
+                Live tournament analytics
+              </p>
 
-            <p className="mt-5 max-w-3xl text-xl leading-8">
-              {worldCupCaseStudy.summary}
-            </p>
+              <h1 className="mt-3 text-4xl font-semibold tracking-tight text-balance">
+                World Cup Fantasy Predictor
+              </h1>
 
-            {overviewSection?.paragraphs && (
-              <div className="mt-6 space-y-4">
-                {overviewSection.paragraphs.map((paragraph) => (
-                  <p
-                    key={paragraph}
-                    className="max-w-3xl text-lg leading-8 text-muted"
-                  >
-                    {paragraph}
-                  </p>
+              <div className="mt-6 max-w-5xl space-y-5 text-[18px] leading-8 text-foreground/90">
+                <p>
+                  A full-stack live tournament analytics platform for match
+                  forecasts, player projections, and fantasy decision support.
+                </p>
+
+                <p>
+                  The system combines live-data ingestion, database-backed
+                  prediction pipelines, evaluation checkpoints, and user-facing
+                  tools for transfers, squad planning, Team of the Round, and
+                  Golden Boot tracking.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-9 border-t border-border-subtle pt-8">
+              <h2 className="text-xl font-semibold">
+                Tech Stack
+              </h2>
+
+              <div className="mt-5 flex flex-wrap gap-3">
+                {technologies.map((technology) => (
+                  <ProjectTag key={technology}>
+                    {technology}
+                  </ProjectTag>
                 ))}
               </div>
-            )}
-
-            <h2 className="mt-8 text-xl font-semibold">
-              Tech Stack
-            </h2>
-
-            <div className="mt-4 flex flex-wrap gap-3">
-              {worldCupCaseStudy.technologies.map((technology) => (
-                <ProjectTag key={technology}>
-                  {technology}
-                </ProjectTag>
-              ))}
             </div>
-          </header>
+          </ContentCard>
 
-          <div className="mt-16 grid gap-x-12 gap-y-14 md:grid-cols-2">
-            {detailSections.map((section) => (
-              <section key={section.id} id={section.id}>
-                <h2 className="text-2xl font-semibold tracking-tight">
-                  {section.title}
-                </h2>
+          <div className="grid gap-8 xl:grid-cols-2">
+            <DetailCard
+              title="What I Built"
+              items={whatIBuilt}
+            />
 
-                {section.paragraphs && (
-                  <div className="mt-5 space-y-4">
-                    {section.paragraphs.map((paragraph) => (
-                      <p
-                        key={paragraph}
-                        className="text-base leading-7 text-muted"
-                      >
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
-                )}
+            <DetailCard
+              title="Challenges"
+              items={challenges}
+            />
 
-                {section.bullets && (
-                  <ul className="mt-5 space-y-3">
-                    {section.bullets.map((bullet) => (
-                      <li
-                        key={bullet}
-                        className="text-base leading-7"
-                      >
-                        • {bullet}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </section>
-            ))}
+            <DetailCard
+              title="Engineering Highlights"
+              items={engineeringHighlights}
+            />
+
+            <DetailCard
+              title="Evaluation & Limitations"
+              items={evaluationAndLimitations}
+            />
           </div>
-
-          <p className="mt-16 border-t border-border-subtle pt-6 text-sm leading-6 text-muted">
-            {worldCupCaseStudy.sourceNote}
-          </p>
-        </article>
+        </div>
       </PortfolioShell>
     </Container>
   );

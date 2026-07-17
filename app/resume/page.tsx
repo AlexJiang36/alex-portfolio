@@ -26,13 +26,13 @@ export default function ResumePage() {
       <PortfolioShell>
         <div className="space-y-8">
           <ContentCard>
-            <SectionHeading>Resume</SectionHeading>
+            <SectionHeading>Professional Profile</SectionHeading>
 
             <div className="mt-6 space-y-4">
               {professionalSummary.map((paragraph) => (
                 <p
                   key={paragraph}
-                  className="text-lg leading-8 text-muted"
+                  className="text-[18px] leading-8 text-foreground/90"
                 >
                   {paragraph}
                 </p>
@@ -43,10 +43,10 @@ export default function ResumePage() {
           <ContentCard>
             <SectionHeading>Technical Skills</SectionHeading>
 
-            <div className="mt-8 grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
+            <div className="mt-8 grid gap-9 sm:grid-cols-2 xl:grid-cols-3">
               {skillGroups.map((group) => (
                 <section key={group.title}>
-                  <h3 className="text-lg font-semibold">
+                  <h3 className="text-xl font-semibold">
                     {group.title}
                   </h3>
 
@@ -55,14 +55,17 @@ export default function ResumePage() {
                       <span
                         key={skill}
                         className="
-                          rounded-md
-                          border border-border-subtle
-                          bg-surface
+                          rounded-lg
+                          border
                           px-3 py-1.5
                           text-sm
-                          font-medium
-                          text-muted
+                          font-semibold
                         "
+                        style={{
+                          backgroundColor: "#eef4f9",
+                          borderColor: "#c8d8e5",
+                          color: "#405b73",
+                        }}
                       >
                         {skill}
                       </span>
@@ -84,22 +87,22 @@ export default function ResumePage() {
                 >
                   <header className="grid gap-3 md:grid-cols-[minmax(0,1fr)_22rem] md:items-start">
                     <div>
-                      <h3 className="text-lg font-semibold">
+                      <h3 className="text-xl font-semibold">
                         {item.role}
                       </h3>
 
-                      <p className="mt-1 text-sm text-muted">
+                      <p className="mt-1 text-base font-medium text-foreground/90">
                         {item.organization}
                       </p>
                     </div>
 
-                    <div className="text-sm text-muted md:whitespace-nowrap md:text-right">
+                    <div className="text-base text-foreground/90 md:whitespace-nowrap md:text-right">
                       <p>{item.period}</p>
                       <p className="mt-1">{item.location}</p>
                     </div>
                   </header>
 
-                  <ul className="list-disc space-y-3 pl-6 text-base leading-7 text-muted">
+                  <ul className="list-disc space-y-3 pl-6 text-[17px] leading-8 text-foreground/90">
                     {item.highlights.map((highlight) => (
                       <li key={highlight}>{highlight}</li>
                     ))}
@@ -121,24 +124,24 @@ export default function ResumePage() {
                   >
                     <header className="grid gap-3 md:grid-cols-[minmax(0,1fr)_22rem] md:items-start">
                       <div>
-                        <h4 className="text-lg font-semibold">
+                        <h4 className="text-xl font-semibold">
                           {item.role}
                         </h4>
 
-                        <p className="mt-1 text-sm text-muted">
+                        <p className="mt-1 text-base font-medium text-foreground/90">
                           {item.organization}
                         </p>
                       </div>
 
-                      <div className="text-sm text-muted md:whitespace-nowrap md:text-right">
+                      <div className="text-base text-foreground/90 md:whitespace-nowrap md:text-right">
                         <p>{item.period}</p>
                         <p className="mt-1">{item.location}</p>
                       </div>
                     </header>
 
-                    <p className="text-base leading-7 text-muted">
-                      {item.summary}
-                    </p>
+                    <ul className="list-disc pl-6 text-[17px] leading-8 text-foreground/90">
+                      <li>{item.summary}</li>
+                    </ul>
                   </article>
                 ))}
               </div>
@@ -156,22 +159,22 @@ export default function ResumePage() {
                 >
                   <header className="grid gap-3 md:grid-cols-[minmax(0,1fr)_22rem] md:items-start">
                     <div>
-                      <h3 className="text-lg font-semibold">
+                      <h3 className="text-xl font-semibold">
                         {item.degree}
                       </h3>
 
-                      <p className="mt-1 text-sm text-muted">
+                      <p className="mt-1 text-base font-medium text-foreground/90">
                         {item.institution}
                       </p>
                     </div>
 
-                    <div className="text-sm text-muted md:whitespace-nowrap md:text-right">
+                    <div className="text-base text-foreground/90 md:whitespace-nowrap md:text-right">
                       <p>{item.period}</p>
                       <p className="mt-1">{item.location}</p>
                     </div>
                   </header>
 
-                  <p className="text-base leading-7 text-muted">
+                  <p className="text-[17px] leading-8 text-foreground/90">
                     {item.details}
                   </p>
                 </article>
@@ -193,17 +196,17 @@ export default function ResumePage() {
                       href={publication.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-base font-medium leading-7 transition-opacity hover:opacity-65"
+                      className="text-[17px] font-medium leading-7 text-foreground/95 transition-opacity hover:opacity-65"
                     >
                       {publication.title} ↗
                     </a>
 
-                    <p className="mt-1 text-sm text-muted">
+                    <p className="mt-1 text-base text-foreground/85">
                       {publication.journal}
                     </p>
                   </div>
 
-                  <p className="shrink-0 text-sm text-muted sm:text-right">
+                  <p className="shrink-0 text-base text-foreground/85 sm:text-right">
                     {publication.year}
                   </p>
                 </article>
@@ -222,21 +225,21 @@ export default function ResumePage() {
                 >
                   <header className="grid gap-3 md:grid-cols-[minmax(0,1fr)_22rem] md:items-start">
                     <div>
-                      <h3 className="text-lg font-semibold">
+                      <h3 className="text-xl font-semibold">
                         {item.role}
                       </h3>
 
-                      <p className="mt-1 text-sm text-muted">
+                      <p className="mt-1 text-base font-medium text-foreground/90">
                         {item.organization}
                       </p>
                     </div>
 
-                    <p className="text-sm text-muted md:whitespace-nowrap md:text-right">
+                    <p className="text-base text-foreground/90 md:whitespace-nowrap md:text-right">
                       {item.period}
                     </p>
                   </header>
 
-                  <p className="text-base leading-7 text-muted">
+                  <p className="text-[17px] leading-8 text-foreground/90">
                     {item.description}
                   </p>
                 </article>

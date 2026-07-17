@@ -21,7 +21,7 @@ export default function EducationSkills() {
                   {item.degree}
                 </p>
 
-                <p className="mt-2 text-base leading-7 text-muted">
+                <p className="mt-2 text-base leading-7 text-foreground/90">
                   {item.institution} · {item.period}
                 </p>
               </article>

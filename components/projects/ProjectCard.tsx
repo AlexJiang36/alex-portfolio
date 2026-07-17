@@ -13,14 +13,21 @@ export default function ProjectCard({
   return (
     <article
       className="
+        group
         flex h-full min-h-[350px] flex-col
         rounded-2xl
-        bg-background
+        bg-surface
         p-7
-        shadow-[0_10px_28px_rgba(24,24,27,0.055)]
-        ring-1
-        ring-black/[0.04]
+        shadow-[0_10px_28px_rgba(24,24,27,0.06)]
+        ring-1 ring-black/[0.045]
+        transition-[transform,box-shadow]
+        duration-200 ease-out
+        hover:-translate-y-1
+        hover:shadow-[0_18px_42px_rgba(67,90,112,0.14)]
       "
+      style={{
+        borderTop: "3px solid #d7e5f0",
+      }}
     >
       {project.image && (
         <div className="relative mb-7 aspect-[16/10] overflow-hidden rounded-xl">
@@ -29,16 +36,31 @@ export default function ProjectCard({
             alt={project.image.alt}
             fill
             sizes="(min-width: 1024px) 38vw, 100vw"
-            className="object-cover"
+            className="
+              object-cover
+              transition-transform duration-300 ease-out
+              group-hover:scale-[1.02]
+            "
           />
         </div>
       )}
 
-      <h2 className="text-2xl font-semibold tracking-tight text-balance">
+      <p
+        className="
+          text-xs
+          font-semibold uppercase
+          tracking-[0.12em]
+        "
+        style={{ color: "#58738d" }}
+      >
+        {project.status}
+      </p>
+
+      <h2 className="mt-3 text-2xl font-semibold tracking-tight text-balance">
         {project.title}
       </h2>
 
-      <p className="mt-4 text-base leading-7 text-muted text-pretty">
+      <p className="mt-4 text-[17px] leading-8 text-foreground/90 text-pretty">
         {project.shortDescription}
       </p>
 
@@ -47,15 +69,20 @@ export default function ProjectCard({
           <span
             key={technology}
             className="
-              rounded-md
-              border border-border-subtle
-              bg-surface
-              px-3 py-1
-              text-[11px]
-              font-medium
+              rounded-lg
+              border
+              px-3 py-1.5
+              text-xs
+              font-semibold
               tracking-wide
-              text-muted
+              transition-[background-color,border-color]
+              duration-200
             "
+            style={{
+              backgroundColor: "#eef4f9",
+              borderColor: "#c8d8e5",
+              color: "#405b73",
+            }}
           >
             {technology}
           </span>
@@ -69,20 +96,28 @@ export default function ProjectCard({
             className="
               inline-flex min-w-32 items-center justify-center
               rounded-xl
-              border border-border-subtle
+              border
+              bg-white
               px-5 py-2.5
               text-sm font-medium
-              transition-colors
-              hover:bg-surface
+              transition-[background-color,border-color,transform,box-shadow]
+              duration-200
+              hover:-translate-y-0.5
+              hover:bg-background
+              hover:shadow-sm
               focus-visible:outline-none
               focus-visible:ring-2
-              focus-visible:ring-foreground/20
+              focus-visible:ring-offset-2
             "
+            style={{
+              borderColor: "#cfd3d7",
+              color: "#18181b",
+            }}
           >
             View Project
           </Link>
         ) : (
-          <p className="py-2.5 text-sm text-muted">
+          <p className="py-2.5 text-base text-foreground/85">
             Case study coming soon
           </p>
         )}
