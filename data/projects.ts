@@ -6,7 +6,7 @@ export const projects = [
     title: "World Cup Fantasy Predictor",
     status: "Live tournament analytics",
     shortDescription:
-      "Match forecasts, player projections, and fantasy decision-support tools for a live international tournament.",
+      "A live tournament analytics platform for match forecasts, player projections, transfer recommendations, squad planning, and model evaluation.",
     technologies: [
       "Python",
       "FastAPI",
@@ -27,7 +27,7 @@ export const projects = [
     title: "FPL Predictor",
     status: "Fantasy football analytics",
     shortDescription:
-      "A full-stack platform for player predictions, match forecasts, squad planning, and transfer recommendations.",
+      "A full-stack fantasy football platform for player and match predictions, squad planning, transfer recommendations, and multi-season model evaluation.",
     technologies: [
       "Python",
       "FastAPI",

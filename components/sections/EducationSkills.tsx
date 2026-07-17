@@ -14,14 +14,14 @@ export default function EducationSkills() {
             Education
           </h3>
 
-          <div className="mt-5 space-y-6">
+          <div className="mt-6 space-y-7">
             {education.map((item) => (
               <article key={`${item.institution}-${item.degree}`}>
-                <p className="font-medium">
+                <p className="text-lg font-semibold leading-7">
                   {item.degree}
                 </p>
 
-                <p className="mt-1 text-sm leading-6 text-muted">
+                <p className="mt-2 text-base leading-7 text-muted">
                   {item.institution} · {item.period}
                 </p>
               </article>
@@ -34,7 +34,7 @@ export default function EducationSkills() {
             Top Skills
           </h3>
 
-          <div className="mt-5 flex flex-wrap gap-3">
+          <div className="mt-6 flex flex-wrap gap-3">
             {topSkills.map((skill) => (
               <ProjectTag key={skill}>
                 {skill}

@@ -1,4 +1,5 @@
 import ProfileSidebar from "@/components/profile/ProfileSidebar";
+import SiteFooter from "@/components/layout/SiteFooter";
 import SiteNavigation from "@/components/layout/SiteNavigation";
 import SplitLayout from "@/components/layout/SplitLayout";
 
@@ -16,7 +17,10 @@ export default function PortfolioShell({
       </header>
 
       <SplitLayout sidebar={<ProfileSidebar />}>
-        {children}
+        <div className="min-w-0">
+          {children}
+          <SiteFooter />
+        </div>
       </SplitLayout>
     </div>
   );

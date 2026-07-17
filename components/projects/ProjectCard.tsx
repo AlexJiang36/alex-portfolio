@@ -13,7 +13,7 @@ export default function ProjectCard({
   return (
     <article
       className="
-        flex min-h-[360px] flex-col
+        flex h-full min-h-[350px] flex-col
         rounded-2xl
         bg-background
         p-7
@@ -28,17 +28,17 @@ export default function ProjectCard({
             src={project.image.src}
             alt={project.image.alt}
             fill
-            sizes="(min-width: 768px) 40vw, 100vw"
+            sizes="(min-width: 1024px) 38vw, 100vw"
             className="object-cover"
           />
         </div>
       )}
 
-      <h3 className="text-2xl font-semibold tracking-tight">
+      <h2 className="text-2xl font-semibold tracking-tight text-balance">
         {project.title}
-      </h3>
+      </h2>
 
-      <p className="mt-4 text-base leading-7 text-muted">
+      <p className="mt-4 text-base leading-7 text-muted text-pretty">
         {project.shortDescription}
       </p>
 

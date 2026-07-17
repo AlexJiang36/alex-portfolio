@@ -19,17 +19,15 @@ export default function Home() {
           <ContentCard>
             <SectionHeading>About Me</SectionHeading>
 
-            <p className="mt-6 max-w-3xl text-xl font-medium leading-8">
-              {profile.headline}
-            </p>
+            <div className="mt-6 space-y-4 text-lg leading-8 text-muted">
+              <p className="font-semibold text-foreground">
+                {profile.headline}
+              </p>
 
-            <p className="mt-4 max-w-3xl text-lg leading-8 text-muted">
-              {profile.summary}
-            </p>
+              <p>{profile.summary}</p>
 
-            <p className="mt-4 max-w-3xl text-base font-medium leading-7">
-              {profile.target}
-            </p>
+              <p>{profile.target}</p>
+            </div>
           </ContentCard>
 
           <EducationSkills />

@@ -11,19 +11,19 @@ export default function ProjectsPage() {
         <section>
           <SectionHeading>Projects</SectionHeading>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
+          <p className="mt-6 text-lg leading-8 text-muted text-pretty">
             A collection of software engineering, data, and machine-learning
             projects I have built.
           </p>
 
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
             {projects.map((project) => (
-                <ProjectCard
+              <ProjectCard
                 key={project.slug}
                 project={project}
-                />
+              />
             ))}
-            </div>
+          </div>
         </section>
       </PortfolioShell>
     </Container>

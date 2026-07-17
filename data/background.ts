@@ -2,12 +2,12 @@ export const education = [
   {
     institution: "University of British Columbia",
     degree: "Bachelor of Computer Science (Second Degree)",
-    period: "Current",
+    period: "2025 – Present",
   },
   {
     institution: "University of British Columbia",
     degree: "Master of Data Science",
-    period: "2020",
+    period: "2019 – 2020",
   },
 ] as const;
 

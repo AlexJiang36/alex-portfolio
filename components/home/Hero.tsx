@@ -1,32 +1,66 @@
-import Button from "@/components/ui/Button";
+import Link from "next/link";
+
 import { profile } from "@/data/profile";
 
 export default function Hero() {
   return (
     <section className="mb-24">
       <p className="text-sm font-medium uppercase tracking-[0.18em] text-muted">
-        {profile.role}
-    </p>
+        {profile.roles.join(" · ")}
+      </p>
 
-        <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+      <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
         {profile.name}
-        </h1>
+      </h1>
 
-        <h2 className="mt-6 max-w-3xl text-3xl font-medium leading-tight tracking-tight sm:text-4xl">
+      <p className="mt-6 max-w-3xl text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
         {profile.headline}
-        </h2>
+      </p>
 
-        <p className="mt-6 max-w-2xl text-xl leading-8 text-muted">
+      <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
         {profile.summary}
-        </p>
+      </p>
 
-        <p className="mt-4 max-w-2xl text-base font-medium text-foreground">
+      <p className="mt-4 max-w-3xl text-base font-medium leading-7">
         {profile.target}
-        </p>
+      </p>
 
       <div className="mt-8 flex flex-wrap gap-4">
-        <Button href="#projects">View Projects</Button>
-        <Button href="/resume.pdf">Resume</Button>
+        <Link
+          href="/projects"
+          className="
+            inline-flex items-center justify-center
+            rounded-xl
+            border border-border-subtle
+            px-5 py-2.5
+            text-sm font-medium
+            transition-colors
+            hover:bg-surface
+            focus-visible:outline-none
+            focus-visible:ring-2
+            focus-visible:ring-foreground/20
+          "
+        >
+          View Projects
+        </Link>
+
+        <Link
+          href="/resume"
+          className="
+            inline-flex items-center justify-center
+            rounded-xl
+            border border-border-subtle
+            px-5 py-2.5
+            text-sm font-medium
+            transition-colors
+            hover:bg-surface
+            focus-visible:outline-none
+            focus-visible:ring-2
+            focus-visible:ring-foreground/20
+          "
+        >
+          Resume
+        </Link>
       </div>
     </section>
   );
