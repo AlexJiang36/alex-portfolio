@@ -5,23 +5,23 @@ import { profile } from "@/data/profile";
 export default function Hero() {
   return (
     <section className="mb-24">
-      <p className="text-sm font-medium uppercase tracking-[0.18em] text-muted">
+      <p className="type-eyebrow text-muted">
         {profile.roles.join(" · ")}
       </p>
 
-      <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+      <h1 className="type-page-title mt-4">
         {profile.name}
       </h1>
 
-      <p className="mt-6 max-w-3xl text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
+      <p className="type-section-title mt-6 max-w-3xl">
         {profile.headline}
       </p>
 
-      <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
+      <p className="type-body mt-6 max-w-3xl">
         {profile.summary}
       </p>
 
-      <p className="mt-4 max-w-3xl text-base font-medium leading-7">
+      <p className="type-supporting mt-4 max-w-3xl font-medium">
         {profile.target}
       </p>
 

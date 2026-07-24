@@ -7,9 +7,40 @@ type ProjectCardProps = {
   project: Project;
 };
 
+type ProjectCardCopy = {
+  status: string;
+  description: string;
+  actionLabel: string;
+};
+
+const projectCardCopyBySlug: Partial<
+  Record<string, ProjectCardCopy>
+> = {
+  "world-cup-fantasy-predictor": {
+    status: "Live ML System · Sports Analytics",
+    description:
+      "A full-stack ML system for live World Cup data, match and player forecasts, fantasy transfer decisions, and leakage-safe model evaluation.",
+    actionLabel: "View Case Study",
+  },
+  "fpl-predictor": {
+    status: "Full-Stack ML System · Football Analytics",
+    description:
+      "A full-stack ML and analytics system for Premier League player forecasts, match predictions, squad planning, transfer recommendations, and model evaluation.",
+    actionLabel: "View Case Study",
+  },
+};
+
 export default function ProjectCard({
   project,
 }: ProjectCardProps) {
+  const cardCopy = projectCardCopyBySlug[project.slug];
+
+  const status = cardCopy?.status ?? project.status;
+  const description =
+    cardCopy?.description ?? project.shortDescription;
+  const actionLabel =
+    cardCopy?.actionLabel ?? "View Project";
+
   return (
     <article
       className="
@@ -46,22 +77,18 @@ export default function ProjectCard({
       )}
 
       <p
-        className="
-          text-xs
-          font-semibold uppercase
-          tracking-[0.12em]
-        "
+        className="type-eyebrow"
         style={{ color: "#58738d" }}
       >
-        {project.status}
+        {status}
       </p>
 
-      <h2 className="mt-3 text-2xl font-semibold tracking-tight text-balance">
+      <h2 className="type-card-title mt-3">
         {project.title}
       </h2>
 
-      <p className="mt-4 text-[17px] leading-8 text-foreground/90 text-pretty">
-        {project.shortDescription}
+      <p className="type-body mt-4 text-pretty">
+        {description}
       </p>
 
       <div className="mt-8 flex flex-wrap gap-2">
@@ -114,10 +141,10 @@ export default function ProjectCard({
               color: "#18181b",
             }}
           >
-            View Project
+            {actionLabel}
           </Link>
         ) : (
-          <p className="py-2.5 text-base text-foreground/85">
+          <p className="type-supporting py-2.5">
             Case study coming soon
           </p>
         )}

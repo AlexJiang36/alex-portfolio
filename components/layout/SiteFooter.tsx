@@ -8,7 +8,7 @@ export default function SiteFooter() {
         flex flex-col gap-3
         border-t border-border-subtle
         pt-6
-        text-sm text-foreground/80
+        type-small text-body-copy
         sm:flex-row
         sm:items-center
         sm:justify-between

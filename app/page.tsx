@@ -19,14 +19,18 @@ export default function Home() {
           <ContentCard>
             <SectionHeading>About Me</SectionHeading>
 
-            <div className="mt-6 space-y-4 text-[18px] leading-8 text-foreground/90">
-              <p className="font-semibold text-foreground">
+            <div className="mt-6 space-y-4">
+              <p className="type-body-strong">
                 {profile.headline}
               </p>
 
-              <p>{profile.summary}</p>
+              <p className="type-body">
+                {profile.summary}
+              </p>
 
-              <p>{profile.target}</p>
+              <p className="type-body">
+                {profile.target}
+              </p>
             </div>
           </ContentCard>
 

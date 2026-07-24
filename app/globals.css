@@ -3,6 +3,7 @@
 :root {
   --background: #f7f7f5;
   --foreground: #18181b;
+  --body-copy: #2b2d31;
   --muted: #35363c;
   --surface: #ffffff;
   --border: #d0d0cb;
@@ -13,11 +14,34 @@
   --accent: #5f7187;
   --accent-soft: #edf1f5;
   --accent-border: #cbd5df;
+
+  /* Semantic typography scale */
+  --type-page-title-size: 2.25rem;
+  --type-page-title-line: 2.75rem;
+  --type-section-title-size: 1.875rem;
+  --type-section-title-line: 2.375rem;
+  --type-card-title-size: 1.5rem;
+  --type-card-title-line: 2rem;
+  --type-subsection-title-size: 1.25rem;
+  --type-subsection-title-line: 1.75rem;
+  --type-body-size: 1.125rem;
+  --type-body-line: 2rem;
+  --type-supporting-size: 1rem;
+  --type-supporting-line: 1.75rem;
+  --type-small-size: 0.875rem;
+  --type-small-line: 1.25rem;
+  --type-eyebrow-size: 0.75rem;
+  --type-eyebrow-line: 1rem;
+  --type-diagram-label-size: 1rem;
+  --type-diagram-label-line: 1.45;
+  --type-metric-size: 1.875rem;
+  --type-metric-line: 2.25rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-body-copy: var(--body-copy);
   --color-muted: var(--muted);
   --color-surface: var(--surface);
   --color-border-subtle: var(--border);
@@ -68,6 +92,100 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/*
+ * Semantic typography utilities.
+ * Pages and components should choose a role from this scale instead of
+ * assigning one-off font sizes to individual paragraphs or headings.
+ */
+.type-page-title {
+  font-size: var(--type-page-title-size);
+  line-height: var(--type-page-title-line);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.type-section-title {
+  font-size: var(--type-section-title-size);
+  line-height: var(--type-section-title-line);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.type-card-title {
+  font-size: var(--type-card-title-size);
+  line-height: var(--type-card-title-line);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.type-subsection-title {
+  font-size: var(--type-subsection-title-size);
+  line-height: var(--type-subsection-title-line);
+  font-weight: 600;
+}
+
+.type-compact-title {
+  font-size: var(--type-supporting-size);
+  line-height: 1.5rem;
+  font-weight: 600;
+}
+
+.type-body,
+.type-body-strong,
+.type-body-link {
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line);
+}
+
+.type-body {
+  color: var(--body-copy);
+}
+
+.type-body-strong {
+  color: var(--body-copy);
+  font-weight: 600;
+}
+
+.type-body-link {
+  color: var(--foreground);
+  font-weight: 500;
+}
+
+.type-supporting {
+  color: var(--body-copy);
+  font-size: var(--type-supporting-size);
+  line-height: var(--type-supporting-line);
+}
+
+.type-small {
+  font-size: var(--type-small-size);
+  line-height: var(--type-small-line);
+}
+
+.type-eyebrow {
+  font-size: var(--type-eyebrow-size);
+  line-height: var(--type-eyebrow-line);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.type-diagram-label {
+  font-size: var(--type-diagram-label-size);
+  line-height: var(--type-diagram-label-line);
+  font-weight: 600;
+}
+
+.type-metric {
+  font-size: var(--type-metric-size);
+  line-height: var(--type-metric-line);
+  font-weight: 600;
+  letter-spacing: -0.025em;
 }
 
 ::selection {

@@ -88,11 +88,11 @@ function ContactRow({
       </div>
 
       <div className="min-w-0">
-        <dt className="text-sm font-semibold text-foreground">
+        <dt className="type-small font-semibold text-body-copy">
           {label}
         </dt>
 
-        <dd className="mt-1 text-[17px] leading-7 text-foreground/90">
+        <dd className="type-supporting mt-1">
           {children}
         </dd>
       </div>
@@ -148,11 +148,11 @@ export default function ProfileSidebar() {
           />
         </div>
 
-        <h1 className="mt-9 text-4xl font-semibold tracking-tight">
+        <h1 className="type-page-title mt-9">
           {profile.name}
         </h1>
 
-        <div className="mt-5 space-y-1 text-[17px] leading-7 text-foreground/90">
+        <div className="type-supporting mt-5 space-y-1">
           {profile.roles.map((role) => (
             <p key={role} className="whitespace-nowrap">
               {role}

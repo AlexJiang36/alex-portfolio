@@ -10,18 +10,18 @@ export default function EducationSkills() {
 
       <div className="mt-8 grid gap-10 md:grid-cols-2">
         <div>
-          <h3 className="text-xl font-semibold">
+          <h3 className="type-subsection-title">
             Education
           </h3>
 
           <div className="mt-6 space-y-7">
             {education.map((item) => (
               <article key={`${item.institution}-${item.degree}`}>
-                <p className="text-lg font-semibold leading-7">
+                <p className="type-body-strong">
                   {item.degree}
                 </p>
 
-                <p className="mt-2 text-base leading-7 text-foreground/90">
+                <p className="type-supporting mt-2">
                   {item.institution} · {item.period}
                 </p>
               </article>
@@ -30,7 +30,7 @@ export default function EducationSkills() {
         </div>
 
         <div>
-          <h3 className="text-xl font-semibold">
+          <h3 className="type-subsection-title">
             Top Skills
           </h3>
 

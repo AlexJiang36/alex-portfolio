@@ -32,7 +32,7 @@ export default function ResumePage() {
               {professionalSummary.map((paragraph) => (
                 <p
                   key={paragraph}
-                  className="text-[18px] leading-8 text-foreground/90"
+                  className="type-body"
                 >
                   {paragraph}
                 </p>
@@ -46,7 +46,7 @@ export default function ResumePage() {
             <div className="mt-8 grid gap-9 sm:grid-cols-2 xl:grid-cols-3">
               {skillGroups.map((group) => (
                 <section key={group.title}>
-                  <h3 className="text-xl font-semibold">
+                  <h3 className="type-subsection-title">
                     {group.title}
                   </h3>
 
@@ -87,22 +87,22 @@ export default function ResumePage() {
                 >
                   <header className="grid gap-3 md:grid-cols-[minmax(0,1fr)_22rem] md:items-start">
                     <div>
-                      <h3 className="text-xl font-semibold">
+                      <h3 className="type-subsection-title">
                         {item.role}
                       </h3>
 
-                      <p className="mt-1 text-base font-medium text-foreground/90">
+                      <p className="type-supporting mt-1 font-medium">
                         {item.organization}
                       </p>
                     </div>
 
-                    <div className="text-base text-foreground/90 md:whitespace-nowrap md:text-right">
+                    <div className="type-supporting md:whitespace-nowrap md:text-right">
                       <p>{item.period}</p>
                       <p className="mt-1">{item.location}</p>
                     </div>
                   </header>
 
-                  <ul className="list-disc space-y-3 pl-6 text-[17px] leading-8 text-foreground/90">
+                  <ul className="type-body list-disc space-y-3 pl-6">
                     {item.highlights.map((highlight) => (
                       <li key={highlight}>{highlight}</li>
                     ))}
@@ -112,7 +112,7 @@ export default function ResumePage() {
             </div>
 
             <div className="mt-12 border-t border-border-subtle pt-8">
-              <h3 className="text-xl font-semibold">
+              <h3 className="type-subsection-title">
                 Earlier Experience
               </h3>
 
@@ -124,22 +124,22 @@ export default function ResumePage() {
                   >
                     <header className="grid gap-3 md:grid-cols-[minmax(0,1fr)_22rem] md:items-start">
                       <div>
-                        <h4 className="text-xl font-semibold">
+                        <h4 className="type-subsection-title">
                           {item.role}
                         </h4>
 
-                        <p className="mt-1 text-base font-medium text-foreground/90">
+                        <p className="type-supporting mt-1 font-medium">
                           {item.organization}
                         </p>
                       </div>
 
-                      <div className="text-base text-foreground/90 md:whitespace-nowrap md:text-right">
+                      <div className="type-supporting md:whitespace-nowrap md:text-right">
                         <p>{item.period}</p>
                         <p className="mt-1">{item.location}</p>
                       </div>
                     </header>
 
-                    <ul className="list-disc pl-6 text-[17px] leading-8 text-foreground/90">
+                    <ul className="type-body list-disc pl-6">
                       <li>{item.summary}</li>
                     </ul>
                   </article>
@@ -159,22 +159,22 @@ export default function ResumePage() {
                 >
                   <header className="grid gap-3 md:grid-cols-[minmax(0,1fr)_22rem] md:items-start">
                     <div>
-                      <h3 className="text-xl font-semibold">
+                      <h3 className="type-subsection-title">
                         {item.degree}
                       </h3>
 
-                      <p className="mt-1 text-base font-medium text-foreground/90">
+                      <p className="type-supporting mt-1 font-medium">
                         {item.institution}
                       </p>
                     </div>
 
-                    <div className="text-base text-foreground/90 md:whitespace-nowrap md:text-right">
+                    <div className="type-supporting md:whitespace-nowrap md:text-right">
                       <p>{item.period}</p>
                       <p className="mt-1">{item.location}</p>
                     </div>
                   </header>
 
-                  <p className="text-[17px] leading-8 text-foreground/90">
+                  <p className="type-body">
                     {item.details}
                   </p>
                 </article>
@@ -196,17 +196,17 @@ export default function ResumePage() {
                       href={publication.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-[17px] font-medium leading-7 text-foreground/95 transition-opacity hover:opacity-65"
+                      className="type-body-link transition-opacity hover:opacity-65"
                     >
                       {publication.title} ↗
                     </a>
 
-                    <p className="mt-1 text-base text-foreground/85">
+                    <p className="type-supporting mt-1">
                       {publication.journal}
                     </p>
                   </div>
 
-                  <p className="shrink-0 text-base text-foreground/85 sm:text-right">
+                  <p className="type-supporting shrink-0 sm:text-right">
                     {publication.year}
                   </p>
                 </article>
@@ -225,21 +225,21 @@ export default function ResumePage() {
                 >
                   <header className="grid gap-3 md:grid-cols-[minmax(0,1fr)_22rem] md:items-start">
                     <div>
-                      <h3 className="text-xl font-semibold">
+                      <h3 className="type-subsection-title">
                         {item.role}
                       </h3>
 
-                      <p className="mt-1 text-base font-medium text-foreground/90">
+                      <p className="type-supporting mt-1 font-medium">
                         {item.organization}
                       </p>
                     </div>
 
-                    <p className="text-base text-foreground/90 md:whitespace-nowrap md:text-right">
+                    <p className="type-supporting md:whitespace-nowrap md:text-right">
                       {item.period}
                     </p>
                   </header>
 
-                  <p className="text-[17px] leading-8 text-foreground/90">
+                  <p className="type-body">
                     {item.description}
                   </p>
                 </article>

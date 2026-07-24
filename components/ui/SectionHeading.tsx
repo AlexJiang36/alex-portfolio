@@ -9,7 +9,7 @@ export default function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <div className={className}>
-      <h2 className="text-3xl font-semibold tracking-tight text-balance">
+      <h2 className="type-section-title">
         {children}
       </h2>
 

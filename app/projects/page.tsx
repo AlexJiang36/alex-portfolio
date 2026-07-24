@@ -11,7 +11,7 @@ export default function ProjectsPage() {
         <section>
           <SectionHeading>Projects</SectionHeading>
 
-          <p className="mt-6 text-lg leading-8 text-muted text-pretty">
+          <p className="type-body mt-6 text-pretty">
             A collection of software engineering, data, and machine-learning
             projects I have built.
           </p>
